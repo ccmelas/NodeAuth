@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    .col-sm-6.mx-auto
+        h1 Login
+        br
+        form(method='post', action='/users/login')
+            .form-group
+                label Username
+                input.form-control(name='username', type='text', placeholder='Choose username')
+            .form-group
+                label Password
+                input.form-control(name='password', type='password', placeholder='Choose a password')
+            button.btn.btn-block.btn-primary(type="submit") Login

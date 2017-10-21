@@ -1,0 +1,31 @@
+extends layout
+
+block content
+    .col-sm-6.mx-auto
+        h1 Register
+        p Please register using the form below
+        br
+        ul.errors
+            if errors
+                each error, i in errors
+                    li.alert.alert-danger #{error.msg}
+        form(method='post', action='/users/register', enctype='multipart/form-data')
+            .form-group
+                label Name
+                input.form-control(name='name', type='text', placeholder='Enter Name')
+            .form-group
+                label Email
+                input.form-control(name='email', type='email', placeholder='Enter your email address')
+            .form-group
+                label Username
+                input.form-control(name='username', type='text', placeholder='Choose username')
+            .form-group
+                label Password
+                input.form-control(name='password', type='password', placeholder='Choose a password')
+            .form-group
+                label Confirm Password
+                input.form-control(name='password2', type='password', placeholder='Enter password again')
+            .form-group
+                label Select an avatar
+                input.form-control(name='avatar', type='file')
+            button.btn.btn-block.btn-primary(type="submit") Register
